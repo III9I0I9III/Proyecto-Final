@@ -12,5 +12,5 @@ aula-digital.netlify.app
 - [Manual de Usuario PDF](https://link-al-pdf.com)
 - [Manual Técnico PDF](https://link-al-pdf.com)
 
-##Tablero de trabajo
+## Tablero de trabajo
 - NOTION
