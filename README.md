@@ -5,7 +5,7 @@ aula-digital.netlify.app
 
 ## Integrantes del equipo
 - Jose Armando Anzora
-- Leshka Priscila Navidad
+- ALeshka Priscila Navidad
 - Delmy Beatriz Gonzales Aragon
 
 ## Manuales
