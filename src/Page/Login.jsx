@@ -40,7 +40,7 @@ const Login = ({ onLogin }) => {
         </button>
       )}
 
-      {}
+      {/* Menú lateral */}
       <div
         className={`fixed top-0 right-0 h-full w-64 bg-white shadow-lg z-40 transform transition-transform duration-300 ${
           menuAbierto ? 'translate-x-0' : 'translate-x-full'
@@ -77,7 +77,7 @@ const Login = ({ onLogin }) => {
           </li>
           <li>
             <a 
-              href="https://www.google.com/maps/place/Don+Bosco+University/@13.715918,-89.1610737,13z/data=!4m6!3m5!1s0x8f63375d2edcba6f:0x5101ecc11020bce6!8m2!3d13.7159035!4d-89.1536987!16s%2Fg%2F1215vs5n?entry=ttu&g_ep=EgoyMDI1MDUxNS4wIKXMDSoJLDEwMjExNDU1SAFQAw%3D%3D" 
+              href="https://www.google.com/maps/place/Don+Bosco+University/@13.715918,-89.1610737,13z/data=!4m6!3m5!1s0x8f63375d2edcba6f:0x5101ecc11020bce6!8m2!3d13.7159035!4d-89.1536987!16s%2Fg%2F1215vs5n?entry=ttu" 
               target="_blank" 
               rel="noopener noreferrer"
               className="hover:bg-gray-100 p-2 rounded block"
@@ -86,9 +86,17 @@ const Login = ({ onLogin }) => {
               Ubicación 
             </a>
           </li>
+          <li>
+            <a 
+              href="mailto:contacto@udb.edu.sv" 
+              className="hover:bg-gray-100 p-2 rounded block"
+              onClick={() => setMenuAbierto(false)}
+            >
+              Contacto
+            </a>
+          </li>
         </ul>
       </div>
-      
 
       {/* Fondo oscuro detrás del menú */}
       {menuAbierto && (
