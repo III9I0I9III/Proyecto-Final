@@ -18,3 +18,8 @@ aula-digital.netlify.app
 ## Licencia
 
 -  Aula Digital © 2025 by ADA está licenciado bajo CC BY-NC-SA 4.0. Para ver una copia de esta licencia, visite https://creativecommons.org/licenses/by-nc-sa/4.0/ 
+
+## Instrucciones para clonar y ejecutar localmente 
+-Abre tu terminal o consola y escribe:
+
+git clone https://github.com/III9I0I9III/Proyecto-Final.git
