@@ -14,3 +14,7 @@ aula-digital.netlify.app
 
 ## Tablero de trabajo
 - NOTION
+
+## Licencia
+
+-  Aula Digital © 2025 by ADA está licenciado bajo CC BY-NC-SA 4.0. Para ver una copia de esta licencia, visite https://creativecommons.org/licenses/by-nc-sa/4.0/ 
