@@ -88,6 +88,7 @@ const Login = ({ onLogin }) => {
           </li>
         </ul>
       </div>
+      
 
       {/* Fondo oscuro detrás del menú */}
       {menuAbierto && (
