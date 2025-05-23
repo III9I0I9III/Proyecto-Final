@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Animación flotante suave */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+/* Fondo degradado animado con movimiento muy sutil */
+.bg-gradient-animated {
+  @apply relative w-full h-full overflow-hidden bg-gradient-to-b from-blue-300 via-blue-400 to-blue-500;
+  background-size: 200% 200%;
+  animation: gradientShift 15s ease infinite;
+}
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* Estilos comunes para nubes y estrellas */
+.shape-cloud,
+.shape-star {
+  @apply absolute opacity-90 pointer-events-none drop-shadow-lg;
+}
+
+/* Nubes blancas redondeadas y suaves, animación flotante */
+.shape-cloud {
+  @apply bg-white rounded-full shadow-md;
+  animation: float 6s ease-in-out infinite;
+  filter: drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
+}
+
+/* Estrellitas amarillas pequeñas, animación flotante y parpadeo */
+.shape-star {
+  @apply w-4 h-4 bg-yellow-300 rounded-full shadow-sm;
+  animation: float 4s ease-in-out infinite, twinkle 3.5s ease-in-out infinite;
+}
+
+/* Parpadeo suave para estrellas */
+@keyframes twinkle {
+  0%, 100% { opacity: 0.9; }
+  50% { opacity: 0.3; }
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.fondo-login-similar {
+  background: linear-gradient(270deg, #4f46e5, #3b82f6, #9333ea, #3b82f6);
+  background-size: 800% 800%;
+  animation: gradientShift 5s ease infinite;
+}
+
+
+
+/*matematicas*/
+.ejercicio {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 20px;
+  margin-bottom: 24px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ejercicio:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.ejercicio h2 {
+  font-size: 1.5rem;
+  margin-bottom: 12px;
+  color: #2c3e50;
+}
+
+.ejercicio p {
+  color: #555;
+  line-height: 1.5;
+}
+
+
+
+
+

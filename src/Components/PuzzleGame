@@ -1,0 +1,90 @@
+import { useState } from 'react';
+
+const PUZZLE_IMAGE = "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80"; // Cambia por la imagen que quieras
+
+// El puzzle será 2x2 piezas para simplicidad
+const gridSize = 2;
+
+function shuffleArray(array) {
+  // Método simple para mezclar un array
+  let arr = array.slice();
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+}
+
+const PuzzleGame = () => {
+  // Cada pieza es un índice, orden correcto 0,1,2,3
+  const [pieces, setPieces] = useState(() => shuffleArray([0, 1, 2, 3]));
+  const [selectedIndex, setSelectedIndex] = useState(null);
+  const [isCompleted, setIsCompleted] = useState(false);
+
+  const pieceSize = 100; // tamaño en px por pieza
+
+  function onPieceClick(index) {
+    if (selectedIndex === null) {
+      setSelectedIndex(index);
+    } else {
+      // intercambiar piezas
+      let newPieces = pieces.slice();
+      [newPieces[selectedIndex], newPieces[index]] = [newPieces[index], newPieces[selectedIndex]];
+      setPieces(newPieces);
+      setSelectedIndex(null);
+
+      // comprobar si completado
+      if (newPieces.every((val, idx) => val === idx)) {
+        setIsCompleted(true);
+      }
+    }
+  }
+
+  return (
+    <div className="mt-8">
+      <h2 className="text-xl font-semibold mb-4 text-center text-gray-700">¡Arma el rompecabezas!</h2>
+      <div
+        className="mx-auto"
+        style={{
+          width: pieceSize * gridSize,
+          height: pieceSize * gridSize,
+          display: "grid",
+          gridTemplateColumns: `repeat(${gridSize}, ${pieceSize}px)`,
+          gridTemplateRows: `repeat(${gridSize}, ${pieceSize}px)`,
+          gap: "4px",
+          borderRadius: "12px",
+          boxShadow: "0 4px 8px rgba(0,0,0,0.2)",
+          userSelect: "none",
+        }}
+      >
+        {pieces.map((piece, index) => {
+          const x = (piece % gridSize) * 50; // 50% por pieza
+          const y = Math.floor(piece / gridSize) * 50;
+          const isSelected = selectedIndex === index;
+
+          return (
+            <button
+              key={index}
+              onClick={() => onPieceClick(index)}
+              style={{
+                width: pieceSize,
+                height: pieceSize,
+                backgroundImage: `url(${PUZZLE_IMAGE})`,
+                backgroundSize: `${gridSize * 100}% ${gridSize * 100}%`,
+                backgroundPosition: `${-x}% ${-y}%`,
+                border: isSelected ? "3px solid #f97316" : "1px solid #ddd",
+                borderRadius: "8px",
+                cursor: "pointer",
+                transition: "border-color 0.3s",
+              }}
+              aria-label={`Pieza ${index + 1}`}
+            />
+          );
+        })}
+      </div>
+      {isCompleted && (
+        <p className="mt-4 text-center text-green-600 font-semibold">¡Felicitaciones! Has armado el rompecabezas 🎉</p>
+      )}
+    </div>
+  );
+};
