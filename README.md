@@ -9,7 +9,7 @@ aula-digital.netlify.app
 - Delmy Beatriz Gonzales Aragon
 
 ## Manuales
-- [Manual de Usuario PDF](https://link-al-pdf.com)
+- [Manual de Usuario PDF](https://www.canva.com/design/DAGoTFKHSUE/SOdMFHSQ3DbdSQ68Bp9jvw/edit?utm_content=DAGoTFKHSUE&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
 - [Manual Técnico PDF](https://link-al-pdf.com)
 
 ## Tablero de trabajo
